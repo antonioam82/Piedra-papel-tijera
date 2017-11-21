@@ -16,7 +16,7 @@ while True:
     Comp=Comp.lower()
     
     puntos=pickle.load(open("marcador.mio","rb"))
-    if Tu!=Comp:   #¿SE PODRIA HACER UNA FUNCION QUE SIMPLICASE ESTE BLOQUE?
+    if Tu!=Comp:  
         if Tu==("papel") and Comp==("tijera"):
             print("PERDISTE: Las tijeras cortan el papel")
             puntos[0]=puntos[0]+1;puntos[2]=puntos[2]+1
