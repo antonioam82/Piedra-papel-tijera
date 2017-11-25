@@ -39,7 +39,7 @@ while True:
         print("EMPATE")
         puntos[0]=puntos[0]+1;puntos[3]=puntos[3]+1
     pickle.dump(puntos,open("marcador.mio","wb"))
-    Res=input("¿Desea ver la puntuación actual?: ")
+    Res=input("¿Desea ver la puntuación actual?: ")#EL USUARIO HA DE ESCRIBIR "n" PARA "NO", "s" PARA "SI" Y "C" PARA PONER A 0 EL MARCADOR
     if Res!=("C"):
         Res=ns(Res)
     else:
@@ -48,7 +48,7 @@ while True:
         pickle.dump(puntos,open("marcador.mio","wb"))
     if Res==("s"):
         print("PARTIDAS JUGADAS:",puntos[0],"GANADAS:",puntos[1],"PERDIDAS:",puntos[2],"EMPATES:",puntos[3])
-    C=ns(input("¿Jugar otra vez?: "))
+    C=ns(input("¿Jugar otra vez?: "))#EL USUARIO HA DE ESCRIBIR "n" PARA "NO" Y "s" PARA "SI".
     if C==("n"):
         break
     else:
