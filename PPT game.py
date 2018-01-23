@@ -2,10 +2,10 @@ from VALID import ns
 import random
 import pickle
 import subprocess
-            
+
 while True:
     print("JUGANDO A PIEDRA, PAPEL O TIJERA")
-    Comp=random.choice(["Piedra","Papel","Tijera"])#Comp=(ppt(n)).lower()
+    Comp=random.choice(["piedra","papel","tijera"])
     Tu=input("Piedra, Papel o Tijera: ")
     Tu=Tu.lower()
     while Tu!=("piedra") and Tu!=("papel") and Tu!=("tijera"):
@@ -13,10 +13,9 @@ while True:
         Tu=Tu.lower()
     print("Tu:",Tu.upper())
     print("Ordenador:",Comp.upper())
-    Comp=Comp.lower()
     
     puntos=pickle.load(open("marcador.mio","rb"))
-    if Tu!=Comp:  
+    if Tu!=Comp:   #¿SE PODRIA HACER UNA FUNCION QUE SIMPLICASE ESTE BLOQUE?
         if Tu==("papel") and Comp==("tijera"):
             print("PERDISTE: Las tijeras cortan el papel")
             puntos[0]=puntos[0]+1;puntos[2]=puntos[2]+1
@@ -39,7 +38,7 @@ while True:
         print("EMPATE")
         puntos[0]=puntos[0]+1;puntos[3]=puntos[3]+1
     pickle.dump(puntos,open("marcador.mio","wb"))
-    Res=input("¿Desea ver la puntuación actual?: ")#EL USUARIO HA DE ESCRIBIR "n" PARA "NO", "s" PARA "SI" Y "C" PARA PONER A 0 EL MARCADOR
+    Res=input("¿Desea ver la puntuación actual?: ")
     if Res!=("C"):
         Res=ns(Res)
     else:
@@ -48,11 +47,13 @@ while True:
         pickle.dump(puntos,open("marcador.mio","wb"))
     if Res==("s"):
         print("PARTIDAS JUGADAS:",puntos[0],"GANADAS:",puntos[1],"PERDIDAS:",puntos[2],"EMPATES:",puntos[3])
-    C=ns(input("¿Jugar otra vez?: "))#EL USUARIO HA DE ESCRIBIR "n" PARA "NO" Y "s" PARA "SI".
+    C=ns(input("¿Jugar otra vez?: "))
     if C==("n"):
         break
     else:
         subprocess.call(["cmd.exe","/C","cls"])
+
+
 
 
 
