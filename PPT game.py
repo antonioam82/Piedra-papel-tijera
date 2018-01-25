@@ -15,7 +15,7 @@ while True:
     print("Ordenador:",Comp.upper())
     
     puntos=pickle.load(open("marcador.mio","rb"))
-    if Tu!=Comp:   #¿SE PODRIA HACER UNA FUNCION QUE SIMPLICASE ESTE BLOQUE?
+    if Tu!=Comp:   
         if Tu==("papel") and Comp==("tijera"):
             print("PERDISTE: Las tijeras cortan el papel")
             puntos[0]=puntos[0]+1;puntos[2]=puntos[2]+1
@@ -47,14 +47,10 @@ while True:
         pickle.dump(puntos,open("marcador.mio","wb"))
     if Res==("s"):
         print("PARTIDAS JUGADAS:",puntos[0],"GANADAS:",puntos[1],"PERDIDAS:",puntos[2],"EMPATES:",puntos[3])
-    C=ns(input("¿Jugar otra vez?: "))
-    if C==("n"):
+    conti=ns(input("¿Jugar otra vez?: "))
+    if conti==("n"):
         break
     else:
         subprocess.call(["cmd.exe","/C","cls"])
-
-
-
-
 
 
