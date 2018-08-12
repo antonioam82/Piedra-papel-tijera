@@ -51,6 +51,10 @@ while True:
     if conti==("n"):
         break
     else:
-        subprocess.call(["cmd.exe","/C","cls"])
+        try:
+            subprocess.call(["cmd.exe","/C","cls"])
+        except:
+            continue
+
 
 
