@@ -38,7 +38,7 @@ while True:
         print("EMPATE")
         puntos[0]=puntos[0]+1;puntos[3]=puntos[3]+1
     pickle.dump(puntos,open("marcador.mio","wb"))
-    Res=input("¿Desea ver la puntuación actual?: ")
+    Res=input("¿Desea ver la puntuación actual?: ")#AQUÍ ESCRIBIR "s" PARA "SÍ", "n" PARA "NO" Y "C" PARA PONER A 0 EL MARCADOR
     if Res!=("C"):
         Res=ns(Res)
     else:
