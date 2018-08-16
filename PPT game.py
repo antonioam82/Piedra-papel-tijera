@@ -1,3 +1,4 @@
+#PARA LA EJECUCIÓN DEL PROGRAMA SE NECESITAN LOS ARCHIVOS "VALID.py" y "marcador.mio.py" PRESENTES EN EL REPOSITORIO.
 from VALID import ns
 import random
 import pickle
